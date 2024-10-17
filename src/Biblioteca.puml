@@ -1,27 +1,50 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-abstract class AbstractList
-abstract AbstractCollection
-interface List
-interface Collection
+class BookDTO{
+    private int id;
+    private String author;
+    private String title;
+    private Date date;
+    private String state;
 
-List <|-- AbstractList
-Collection <|-- AbstractCollection
-
-Collection <|- List
-AbstractCollection <|- AbstractList
-AbstractList <|-- ArrayList
-
-class ArrayList {
-Object[] elementData
-size()
+    public String gets();
+    public void sets();
 }
 
-enum TimeUnit {
-DAYS
-HOURS
-MINUTES
+class UserDTO{
+    private int id;
+    private String code;
+    private String password;
+    private int yearsOld;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String phone;
+    private String address;
+
+    public String gets();
+    public void sets();
+}
+
+class BookReturnDTO {
+    private int id;
+    private BookDTO bookID;
+    private UserDTO userID;
+    private Date returnDate;
+
+    public String gets();
+    public void sets();
+}
+
+class BookLoanDTO {
+    private int id;
+    private UserDTO userId;
+    private BookDTO bookId;
+    private Date dateLoan;
+
+    public String gets();
+    public void sets();
 }
 
 @enduml
